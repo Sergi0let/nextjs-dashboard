@@ -16,7 +16,6 @@ export default function Search({ placeholder }: { placeholder: string }) {
     window.clearTimeout(timeout);
 
     timeout = setTimeout(() => {
-      console.log(`Searching for ${term}...`);
       const params = new URLSearchParams(searchParams.toString());
 
       if (term) {
@@ -34,6 +33,10 @@ export default function Search({ placeholder }: { placeholder: string }) {
     };
   });
 
+  console.log(
+    'searchParams.get(query)?.toString()',
+    searchParams.get('query')?.toString(),
+  );
   return (
     <div className="relative flex flex-1 flex-shrink-0">
       <label htmlFor="search" className="sr-only">
